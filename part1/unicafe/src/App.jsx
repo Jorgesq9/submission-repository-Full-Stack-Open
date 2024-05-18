@@ -33,6 +33,7 @@ const App = () => {
         <button onClick={handleBadClick}>Bad</button>
       </div>
       <h2>Statistics</h2>
+
       <Statistics good={good} neutral={neutral} bad={bad} />
     </div>
   );

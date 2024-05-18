@@ -22,6 +22,10 @@ const Statistics = ({ good, neutral, bad }) => {
     }
   }, [totalClicks, good]);
 
+  if (totalClicks === 0) {
+    return "No Feedback Given";
+  }
+
   return (
     <div>
       <p>Good = {good}</p>
