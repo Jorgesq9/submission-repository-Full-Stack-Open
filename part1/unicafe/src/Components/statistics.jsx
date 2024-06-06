@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import StatisticLine from "./StatisticLine";
 
 const Statistics = ({ good, neutral, bad }) => {
   const [totalClicks, setTotalClicks] = useState(0);
@@ -28,12 +29,17 @@ const Statistics = ({ good, neutral, bad }) => {
 
   return (
     <div>
-      <p>Good = {good}</p>
-      <p>Neutral = {neutral}</p>
-      <p>Bad = {bad}</p>
-      <p>All Clicks = {totalClicks}</p>
-      <p>Average = {averagePuntation}</p>
-      <p>Positive = {positiveClicks} %</p>
+      <ul>
+        <StatisticLine text="Good" value={good} />
+        <StatisticLine text="Neutral" value={neutral} />
+        <StatisticLine text="Bad" value={bad} />
+        <StatisticLine text="TotalClicks" value={totalClicks} />
+        <StatisticLine text="TotalPuntuation" value={averagePuntation} />
+        <StatisticLine
+          text="PositivePuntuation"
+          value={`${positiveClicks} %`}
+        />
+      </ul>
     </div>
   );
 };
